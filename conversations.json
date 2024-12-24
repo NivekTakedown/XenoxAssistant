@@ -1,0 +1,38 @@
+{
+  "5682127923": {
+    "user_id": 5682127923,
+    "first_name": "NivekTK",
+    "conversations": [
+      {
+        "user_message": "Hola",
+        "bot_response": "Hola NivekTK! Respuesta generada",
+        "arrival_time": "2024-12-23T21:05:19-05:00",
+        "response_time": "2024-12-23T21:05:19-05:00"
+      },
+      {
+        "user_message": "Nooooo",
+        "bot_response": "Hola NivekTK! Respuesta generada",
+        "arrival_time": "2024-12-23T21:05:29-05:00",
+        "response_time": "2024-12-23T21:05:29-05:00"
+      },
+      {
+        "user_message": "Assd",
+        "bot_response": "Hola NivekTK! Respuesta generada",
+        "arrival_time": "2024-12-23T21:05:33-05:00",
+        "response_time": "2024-12-23T21:05:33-05:00"
+      },
+      {
+        "user_message": "Gvda",
+        "bot_response": "Hola NivekTK! Respuesta generada",
+        "arrival_time": "2024-12-23T21:05:35-05:00",
+        "response_time": "2024-12-23T21:05:35-05:00"
+      },
+      {
+        "user_message": "Hha",
+        "bot_response": "Hola NivekTK! Respuesta generada",
+        "arrival_time": "2024-12-23T21:05:37-05:00",
+        "response_time": "2024-12-23T21:05:37-05:00"
+      }
+    ]
+  }
+}
