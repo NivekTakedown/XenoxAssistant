@@ -7,6 +7,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/NivekTakedown/XenoxAssistants/llm_handler/text"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
@@ -125,11 +126,18 @@ func main() {
 		log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
 		fmt.Printf("Mensaje recibido: [%s] %s\n", update.Message.From.UserName, update.Message.Text)
 
-		// Crea una respuesta por defecto
-		respuesta := fmt.Sprintf("Hola %s! Respuesta generada",
-			update.Message.From.FirstName)
+		var respuesta string
 		if update.Message.Text == "/start" {
-			respuesta = "Hola! Envía tu número telefónico."
+			respuesta = "¡Hola! Soy un asistente ético. ¿En qué puedo ayudarte? Por favor, comparte tu número telefónico."
+		} else {
+			// Use text handler from submodule
+			genAIResp, err := text.HandleText(update.Message.Text)
+			if err != nil {
+				log.Printf("Error generating response: %v", err)
+				respuesta = "Lo siento, hubo un error al procesar tu solicitud."
+			} else {
+				respuesta = genAIResp
+			}
 		}
 
 		msg := tgbotapi.NewMessage(update.Message.Chat.ID, respuesta)
@@ -138,7 +146,6 @@ func main() {
 		}
 
 		responseTime := time.Now().Format(time.RFC3339)
-
 		err = logConversation(update, respuesta, arrivalTime, responseTime)
 		if err != nil {
 			log.Printf("Error al guardar conversación: %v", err)
